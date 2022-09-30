@@ -11,19 +11,26 @@
                 <Entry x:Name="cidadeEntry"/>
             </StackLayout>
             <StackLayout Padding="10,10,10,10"  HorizontalOptions="End">
-
-                <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+                <Button x:Name="btnPrevisao" Text="Previsão do Tempo" WidthRequest="185"
+                       BorderWidth="1" Clicked="btn_Previsao_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout>
+            <StackLayout Padding="10,10,10,10" HorizontalOptions="Start">
+                <Imagem x:Name="imgTempo"/>
+                <Label Text:"Local"/>
+                <Label Text="{Binding Title}" TextColor="Black"/>
+                <Label Text:"Temperatura"/>
+                <Label x:Name="tempLabel" Text="{Binding Temperatura}" TextColor="Black"/>
+                <Label Text:"Velocidade Vento"/>
+                <Label x:Name="ventoLabel" Text="{Binding Vento}" TextColor="Black"/>
+                <Label Text:"Humidade"/>
+                <Label x:Name="humidadeLabel" Text="{Binding Humidade}" TextColor="Black"/>
+                <Label Text:"Visibilidade"/>
+                <Label x:Name="visibilidadeLabel" Text="{Binding Visibilidade}" TextColor="Black"/>
+                <Label Text:"Hora Nascimento Sol"/>
+                <Label x:Name="nascer_solLabel" Text="{Binding Nascer_Sol}" TextColor="Black"/>
+            </StackLayout>
+        </StackLayout>
 
 </ContentPage>

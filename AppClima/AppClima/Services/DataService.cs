@@ -22,7 +22,7 @@ namespace AppClima.Services
             {
                 Tempo.previsao = new Tempo();
                 previsao.Title = (string)resultado["name"];
-                previsao.Title = (string)resultado["name"]; 
+                previsao.Title = (string)resultado["name"];
                 previsao.Title = (string)resultado["name"];
                 previsao.Title = (string)resultado["name"];
                 previsao.Title = (string)resultado["name"];
@@ -34,9 +34,11 @@ namespace AppClima.Services
                 previsao.por_sol = String.Format("{0:d/MM/yyyy HH:mm:ss", por_sol);
                 return previsao;
             }
-            else { 
+            else
+            {
                 return null;
             }
+        }
 
             public static async Task<dynamic> getDataFromService(string queryString)
             {
@@ -69,4 +71,4 @@ namespace AppClima.Services
             }
         }
     }
-}
+
