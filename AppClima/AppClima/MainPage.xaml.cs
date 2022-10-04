@@ -23,7 +23,7 @@ namespace AppClima
         {
             try
             {
-                if (String.IsNullorEmpty(cidadeEntry.Text))
+                if (!String.IsNullOrEmpty(cidadeEntry.Text))
                 {
                     Tempo previsaoDoTempo = await DataService.GetPrevisaoDoTempo(cidadeEntry.Text);
                     this.BindingContext = previsaoDoTempo;
