@@ -1,46 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppClima.MainPage">
+             x:Class="AppClima.MainPage"
+             BackgroundImage="simm.png">
 
     <StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="OrangeRed">
-            <StackLayout Padding="10,10,10,10"  HorizontalOptions="Start">
-                <Label Text="Procurar Cidade" TextColor="White" FontAttributes="Bold" FontSize="Medium"/>
-                <Label x:Name="cidadeLabel" Text="Digite o nome da Cidade" TextColor="Yellow" FontSize="Small"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <StackLayout Padding="10,10,10,10" HorizontalOptions="Start" >
+                <Label Text="Procuparar Cidade" TextColor="Black" FontAttributes="Bold" FontSize="Medium"/>
+                <Label x:Name="cidadeLabel" Text="Digite o nome da cidade" TextColor="Yellow" FontSize="Small"/>
                 <Entry x:Name="cidadeEntry"/>
             </StackLayout>
-            <StackLayout Padding="10,10,10,10"  HorizontalOptions="End">
+            <StackLayout Padding="0,0,0,10" VerticalOptions="Center">
                 <Button x:Name="btnPrevisao" Text="Previsão do Tempo" WidthRequest="185"
-                       BorderWidth="1" Clicked="btnPrevisao_Clicked"/>
+                        BorderWidth="1" Clicked="btnPrevisao_Clicked"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout>
-            <StackLayout Padding="10,10,10,10" HorizontalOptions="Start">
-                <Image x:Name="imgTempo"/>
-
-                <Label Text="Local"/>
-                <Label Text="{Binding Title}" TextColor="Black"/>
-
-                <Label Text="Temperatura"/>
-                <Label x:Name="tempLabel" Text="{Binding Temperatura}" TextColor="Black"/>
-
-                <Label Text=" Velocidade Vento"/>
-                <Label x:Name="ventoLabel" Text="{Binding Vento}" TextColor="Black"/>
-
-                <Label Text="Humidade"/>
-                <Label x:Name="humidadeLabel" Text="{Binding Humidade}" TextColor="Black"/>
-
-                <Label Text="Visibilidade"/>
-                <Label x:Name="visibilidadeLabel" Text="{Binding Visibilidade}" TextColor="Black"/>
-
-                <Label Text="Hora Nascimento Sol"/>
-                <Label x:Name="nascer_solLabel" Text="{Binding Nascer_Sol}" TextColor="Black"/>
-
-                <Label Text="Hora Por Sol"/>
-                <Label x:Name="por_solLabel" Text="{Binding Por_Sol}" TextColor="Black"/>
-
-            </StackLayout>
+        <StackLayout Padding="80,80,80,80" HorizontalOptions="CenterAndExpand" >
+            <Image x:Name="imgTempo"/>
+            <Label Text="Local"/>
+            <Label Text="{Binding Title}" TextColor="Black"/>
+            <Label Text="Temperatura"/>
+            <Label x:Name="tempLabel" TextColor="Black" Text="{Binding Temperature}"/>
+            <Label Text="Veloc Vento"/>
+            <Label x:Name="windLabel" TextColor="Black" Text="{Binding Wind}"/>
+            <Label Text="Humidade"/>
+            <Label x:Name="humidityLabel" TextColor="Black" Text="{Binding Humidity}"/>
+            <Label Text="Visibilidade"/>
+            <Label x:Name="visibilityLabel" TextColor="Black" Text="{Binding Visibility}"/>
+            <Label Text="Horário nascimento do Sol"/>
+            <Label x:Name="sunriseLabel" TextColor="Black" Text="{Binding Sunrise}"/>
+            <Label Text="Horário pôr do sol"/>
+            <Label x:Name="sunsetLabel" TextColor="Black" Text="{Binding Sunset}"/>
         </StackLayout>
     </StackLayout>
+
 </ContentPage>

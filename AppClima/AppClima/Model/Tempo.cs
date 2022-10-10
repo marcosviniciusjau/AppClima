@@ -7,22 +7,24 @@ namespace AppClima.Model
     public class Tempo
     {
         public string Title { get; set; }
-        public string Temperatura { get; set; }
-        public string Vento { get; set; }
-        public string Humidade { get; set; }
-        public string Visibilidade { get; set; }
-        public string Nascer_Sol { get; set; }
-        public string Por_Sol { get; set; }
+        public string Temperature { get; set; }
+        public string Wind { get; set; }
+        public string Humidity { get; set; }
+        public string Visibility { get; set; }
+        public string Sunrise { get; set; }
+        public string Sunset { get; set; }
+
 
         public Tempo()
         {
-            this.Title = "";
-            this.Temperatura = "";
-            this.Vento = "";
-            this.Humidade = "";
-            this.Visibilidade = "";
-            this.Nascer_Sol = "";
-            this.Por_Sol = "";
+            this.Title = " ";
+            this.Temperature = " ";
+            this.Wind = " ";
+            this.Humidity = " ";
+            this.Visibility = " ";
+            this.Sunrise = " ";
+            this.Sunset = " ";
         }
+
     }
 }

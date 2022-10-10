@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+
 using AppClima.Model;
 using AppClima.Services;
 
@@ -25,17 +26,16 @@ namespace AppClima
             {
                 if (!String.IsNullOrEmpty(cidadeEntry.Text))
                 {
-                    Tempo previsaoDoTempo = await DataService.GetPrevisaoDoTempo(cidadeEntry.Text);
+                    Tempo previsaoDoTempo = await DataServices.GetPrevisaoDoTempo(cidadeEntry.Text);
                     this.BindingContext = previsaoDoTempo;
-                    btnPrevisao.Text = "Nova Previsao";
-
+                    btnPrevisao.Text = "Nova Previsão";
                 }
+
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Erro", ex.Message, "Ok");
+                await DisplayAlert("Erro", ex.Message, "OK");
             }
         }
     }
 }
-    
