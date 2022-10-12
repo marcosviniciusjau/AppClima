@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using AppClima.Model;
 using AppClima.Services;
 
+
 namespace AppClima
 {
     public partial class MainPage : ContentPage

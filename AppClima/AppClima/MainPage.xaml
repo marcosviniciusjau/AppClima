@@ -2,36 +2,36 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppClima.MainPage"
-             BackgroundImage="simm.png">
+             BackgroundImage="fundo.png">
 
     <StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <StackLayout Padding="10,10,10,10" HorizontalOptions="Start" >
-                <Label Text="Procuparar Cidade" TextColor="Black" FontAttributes="Bold" FontSize="Medium"/>
-                <Label x:Name="cidadeLabel" Text="Digite o nome da cidade" TextColor="Yellow" FontSize="Small"/>
-                <Entry x:Name="cidadeEntry"/>
+            <StackLayout Padding="20,20,50,20" HorizontalOptions="Start" >
+                <Label Text="Procurar Cidade" TextColor="OrangeRed" FontAttributes="Bold" FontSize="Medium"/>
+                <Label x:Name="cidadeLabel" Text="Digite o nome da cidade" TextColor="MediumPurple" FontSize="Small"/>
+                <Entry x:Name="cidadeEntry" TextColor="OrangeRed"/>
             </StackLayout>
-            <StackLayout Padding="0,0,0,10" VerticalOptions="Center">
-                <Button x:Name="btnPrevisao" Text="Previsão do Tempo" WidthRequest="185"
-                        BorderWidth="1" Clicked="btnPrevisao_Clicked"/>
+            <StackLayout Padding="10,10,10,10" VerticalOptions="Center">
+                <Button x:Name="btnPrevisao" Text="Previsão do Tempo" WidthRequest="105"
+                        BorderWidth="1" Clicked="btnPrevisao_Clicked" BackgroundColor="OrangeRed"/>
             </StackLayout>
         </StackLayout>
-        <StackLayout Padding="80,80,80,80" HorizontalOptions="CenterAndExpand" >
+        <StackLayout Padding="70,70,70,70" HorizontalOptions="CenterAndExpand" >
             <Image x:Name="imgTempo"/>
-            <Label Text="Local"/>
-            <Label Text="{Binding Title}" TextColor="Black"/>
-            <Label Text="Temperatura"/>
-            <Label x:Name="tempLabel" TextColor="Black" Text="{Binding Temperature}"/>
-            <Label Text="Veloc Vento"/>
-            <Label x:Name="windLabel" TextColor="Black" Text="{Binding Wind}"/>
-            <Label Text="Humidade"/>
-            <Label x:Name="humidityLabel" TextColor="Black" Text="{Binding Humidity}"/>
-            <Label Text="Visibilidade"/>
-            <Label x:Name="visibilityLabel" TextColor="Black" Text="{Binding Visibility}"/>
-            <Label Text="Horário nascimento do Sol"/>
-            <Label x:Name="sunriseLabel" TextColor="Black" Text="{Binding Sunrise}"/>
-            <Label Text="Horário pôr do sol"/>
-            <Label x:Name="sunsetLabel" TextColor="Black" Text="{Binding Sunset}"/>
+            <Label Text="Local" TextColor="OrangeRed"/>
+            <Label Text="{Binding Title}" TextColor="OrangeRed"/>
+            <Label Text="Temperatura" TextColor="OrangeRed"/>
+            <Label x:Name="tempLabel" TextColor="OrangeRed" Text="{Binding Temperature}"/>
+            <Label Text="Veloc Vento" TextColor="OrangeRed"/>
+            <Label x:Name="windLabel" TextColor="OrangeRed" Text="{Binding Wind}"/>
+            <Label Text="Humidade" TextColor="OrangeRed"/>
+            <Label x:Name="humidityLabel" TextColor="OrangeRed" Text="{Binding Humidity}"/>
+            <Label Text="Visibilidade" TextColor="OrangeRed"/>
+            <Label x:Name="visibilityLabel" TextColor="OrangeRed" Text="{Binding Visibility}"/>
+            <Label Text="Horário nascimento do Sol" TextColor="OrangeRed"/>
+            <Label x:Name="sunriseLabel" TextColor="OrangeRed" Text="{Binding Sunrise}"/>
+            <Label Text="Horário pôr do sol" TextColor="OrangeRed"/>
+            <Label x:Name="sunsetLabel" TextColor="OrangeRed" Text="{Binding Sunset}"/>
         </StackLayout>
     </StackLayout>
 
