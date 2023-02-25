@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppClima.MainPage"
-             BackgroundImage="fundo.png">
-
+             BackgroundColor="#006B76">
     <StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <StackLayout Padding="20,20,50,20" HorizontalOptions="Start" >
@@ -22,6 +21,7 @@
             <Label Text="{Binding Title}" TextColor="OrangeRed"/>
             <Label Text="Temperatura" TextColor="OrangeRed"/>
             <Label x:Name="tempLabel" TextColor="OrangeRed" Text="{Binding Temperature}"/>
+            <Image Source="humidity.png" HorizontalOptions="Center"/>
             <Label Text="Veloc Vento" TextColor="OrangeRed"/>
             <Label x:Name="windLabel" TextColor="OrangeRed" Text="{Binding Wind}"/>
             <Label Text="Humidade" TextColor="OrangeRed"/>
@@ -34,5 +34,4 @@
             <Label x:Name="sunsetLabel" TextColor="OrangeRed" Text="{Binding Sunset}"/>
         </StackLayout>
     </StackLayout>
-
 </ContentPage>
