@@ -3,35 +3,94 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppClima.MainPage"
              BackgroundColor="#006B76">
-    <StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-            <StackLayout Padding="20,20,50,20" HorizontalOptions="Start" >
-                <Label Text="Procurar Cidade" TextColor="OrangeRed" FontAttributes="Bold" FontSize="Medium"/>
-                <Label x:Name="cidadeLabel" Text="Digite o nome da cidade" TextColor="MediumPurple" FontSize="Small"/>
-                <Entry x:Name="cidadeEntry" TextColor="OrangeRed"/>
-            </StackLayout>
-            <StackLayout Padding="10,10,10,10" VerticalOptions="Center">
-                <Button x:Name="btnPrevisao" Text="Previsão do Tempo" WidthRequest="105"
-                        BorderWidth="1" Clicked="btnPrevisao_Clicked" BackgroundColor="OrangeRed"/>
-            </StackLayout>
-        </StackLayout>
-        <StackLayout Padding="70,70,70,70" HorizontalOptions="CenterAndExpand" >
-            <Image x:Name="imgTempo"/>
-            <Label Text="Local" TextColor="OrangeRed"/>
-            <Label Text="{Binding Title}" TextColor="OrangeRed"/>
-            <Label Text="Temperatura" TextColor="OrangeRed"/>
-            <Label x:Name="tempLabel" TextColor="OrangeRed" Text="{Binding Temperature}"/>
-            <Image Source="humidity.png" HorizontalOptions="Center"/>
-            <Label Text="Veloc Vento" TextColor="OrangeRed"/>
-            <Label x:Name="windLabel" TextColor="OrangeRed" Text="{Binding Wind}"/>
-            <Label Text="Humidade" TextColor="OrangeRed"/>
-            <Label x:Name="humidityLabel" TextColor="OrangeRed" Text="{Binding Humidity}"/>
-            <Label Text="Visibilidade" TextColor="OrangeRed"/>
-            <Label x:Name="visibilityLabel" TextColor="OrangeRed" Text="{Binding Visibility}"/>
-            <Label Text="Horário nascimento do Sol" TextColor="OrangeRed"/>
-            <Label x:Name="sunriseLabel" TextColor="OrangeRed" Text="{Binding Sunrise}"/>
-            <Label Text="Horário pôr do sol" TextColor="OrangeRed"/>
-            <Label x:Name="sunsetLabel" TextColor="OrangeRed" Text="{Binding Sunset}"/>
-        </StackLayout>
-    </StackLayout>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+
+
+            <Grid VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Padding="10,5,10,10">
+                    <Label Text="Procurar Cidade" TextColor="White" FontAttributes="Bold" HeightRequest="250" FontSize="Medium"/>
+                    <Entry x:Name="cidadeEntry" Placeholder="Digite o Nome da Cidade" HorizontalOptions="Center" Margin="30"/>
+                    <Button x:Name="btnPrevisao" Text="Previsao do Tempo" Clicked="btnPrevisao_Clicked" BackgroundColor="Purple" HorizontalOptions="Center"/>
+                </StackLayout>
+
+                <Image Source="overlay.png" Aspect="Fill" HeightRequest="250" VerticalOptions="StartAndExpand"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Margin="0,85">
+                    <Label Text="Clima" FontSize="50" FontAttributes="Bold" VerticalOptions="Center" TextColor="White"/>
+                </StackLayout>
+
+
+                <Frame Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,40,20,0" Padding="0" HeightRequest="120" >
+
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" Margin="20,0">
+                                <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Margin="200,50" HorizontalOptions="Center" VerticalOptions="Center" >
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Image Source="clima.png" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Temperature}" TextColor="White" FontSize="34" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                         
+                           
+
+                    </Grid>
+
+                </Frame>
+                    <Frame Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,80,20,0" Padding="0" HeightRequest="120" >
+
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                                <Image Source="gotas.png" HeightRequest="25" HorizontalOptions="Center"/>
+                                <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Humidity}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="Humidity" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                                <Image Source="vento.png" HeightRequest="25" HorizontalOptions="Center"/>
+                                <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Wind}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="Wind" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                                <Image Source="nuvens.png" HeightRequest="25" HorizontalOptions="Center"/>
+                                <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding Visibility}" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                                    <Label Text="Visibility" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </StackLayout>
+
+                        </Grid>
+
+                    </Frame>
+                </Grid>
+
+        </Grid>
+
+
+
+        </ScrollView>
+
+    </ContentPage.Content>
 </ContentPage>

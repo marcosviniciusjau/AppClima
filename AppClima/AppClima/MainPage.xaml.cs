@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using Xamarin.Forms.Xaml;
 using AppClima.Model;
 using AppClima.Services;
 
@@ -19,10 +19,12 @@ namespace AppClima
             InitializeComponent();
             this.Title = "Previsão do Tempo";
             this.BindingContext = new Tempo();
+          
         }
 
         private async void btnPrevisao_Clicked(object sender, EventArgs e)
         {
+
             try
             {
                 if (!String.IsNullOrEmpty(cidadeEntry.Text))
