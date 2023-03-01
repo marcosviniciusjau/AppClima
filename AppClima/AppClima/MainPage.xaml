@@ -36,19 +36,23 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                            <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" Margin="20,0">
+
+                            <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" VerticalOptions="Start" Margin="250,0">
                                 <Label Text="{Binding Title}" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" TextColor="Black"/>
-                            </StackLayout>
-                            <StackLayout Orientation="Vertical" Margin="200,50" HorizontalOptions="Center" VerticalOptions="Center" >
+                            </StackLayout> 
+                            <Image Source="clima.png" Aspect="Fill" HeightRequest="250" VerticalOptions="StartAndExpand"/>
+
+                          
+                            <StackLayout Orientation="Vertical" Margin="0,0" HorizontalOptions="Center" VerticalOptions="Center">
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                    <Image Source="clima.png" VerticalOptions="Center"/>
-                                    <Label Text="{Binding Temperature}" TextColor="White" FontSize="34" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Temperature}" TextColor="White" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Text="°C" TextColor="White" FontSize="20" VerticalOptions="Center"/>
                                 </StackLayout>
                             </StackLayout>
-                         
-                           
 
-                    </Grid>
+
+
+                        </Grid>
 
                 </Frame>
                     <Frame Grid.Row="2" HasShadow="True" CornerRadius="10" Margin="20,80,20,0" Padding="0" HeightRequest="120" >
